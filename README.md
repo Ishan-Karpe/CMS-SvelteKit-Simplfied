@@ -1,17 +1,4 @@
 <p align="center">
-    <picture>
-        <img width="420" alt="SaaS Starter Header reading: The open source, fast, and free to host SaaS template" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/12f47617-e5be-4694-affc-23310e54b885">
-    </picture>
-</p>
-
-<p align="center">
-  <a href="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/build.yml" target="_blank"><img src="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/build.yml/badge.svg?branch=main" alt="Built Status"></a>
-  <a href="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/format.yml" target="_blank"><img src="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/format.yml/badge.svg?branch=main" alt="Format Check"></a>
-  <a href="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/linting.yml" target="_blank"><img src="https://github.com/CriticalMoments/CMSaasStarter/actions/workflows/linting.yml/badge.svg?branch=main" alt="Linting"></a>
-  <a href="https://github.com/CriticalMoments/CMSaasStarter/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-MIT-brightgreen?labelColor=32383f" alt="License"></a>
-</p>
-
-<p align="center">
   <a href="https://saasstarter.work"><strong>Demo & Homepage</strong></a> •
   <a href="https://github.com/CriticalMoments/CMSaasStarter#quick-start"><strong>Quick Start Guide</strong></a> • 
   <a href="https://github.com/CriticalMoments/CMSaasStarter/issues"><strong>Issues</strong></a>
@@ -29,32 +16,6 @@
 - [MIT Open Source](https://github.com/CriticalMoments/CMSaasStarter/blob/main/LICENSE)
 - [Fully Functional Demo](https://saasstarter.work)
 - [Quick Start](#quick-start): Full docs from `git clone` to deployment.
-
-Created by the folks at [Kiln AI](https://getkiln.ai)! It's the easiest tool for fine-tuning LLM models, synthetic data generation, and collaborating on datasets. The Kiln app was built with SaaS Starter!
-
-**[Kiln AI](https://getkiln.ai)** Rapid AI Prototyping and Dataset Collaboration Tool
-
-## Demo
-
-You can explore all the features using our fully functional demo [saasstarter.work](https://saasstarter.work).
-
-[![Try it Now](https://img.shields.io/badge/Try_it_Now-37a779?style=for-the-badge "Try it Now")](https://saasstarter.work)
-
-See [criticalmoments.io](https://criticalmoments.io) and [getkiln.ai](https://getkiln.ai) for examples of what’s possible after this template has design, content, and functionality added.
-
-<a href="https://saasstarter.work">
-<kbd>
-<img width="500" alt="homepage" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/34944c09-df72-4ac2-9099-01d25d99911b">
-</kbd>
-<br>
-<kbd>
-<img width="200" alt="pricing page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/c3cb2ab7-3739-473e-a1fe-f82a4a31e844">
-</kbd><kbd>
-<img width="200" alt="settings page" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/2d947c97-3cc7-4ff5-a5b1-7c8478b6f31a">
-</kbd><kbd>
-<img width="200" alt="payments portal" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/0c4749c3-0d29-4edc-ae87-d8a4eefea3c9">
-</kbd>
-</a>
 
 ## Features
 
@@ -75,9 +36,6 @@ Everything you need to get started for a SaaS company:
 - Responsive: designed for mobile and desktop.
 - Extensible: all the tools you need to make additional marketing pages, UI components, admin portals, database backends, API endpoints, and more.
 
-## Introduction Blog Post
-
-Want to learn why we picked the technologies we did, and how to keep your fork lightning fast as you add content? Check out [our blog post](https://criticalmoments.io/blog/how_we_built_our_marketing_page) on the process. Yes, it's hosted on a SaaS Starter fork!
 
 ## Tech Stack
 
@@ -94,30 +52,6 @@ Want to learn why we picked the technologies we did, and how to keep your fork l
   - Stripe Checkout
   - Stripe Portal
 
-## Suggested Hosting Stack
-
-**There’s no cost for using this template**. The costs below reflect our suggested hosting stack.
-
-- **$0/mo** — Supabase free tier, Cloudflare free tier.
-  - Pros:
-    - Free!
-    - Can scale to thousands of users.
-    - Unlimited static page requests.
-    - 100k serverless functions/day.
-  - Cons:
-    - Does not include database backups. The frugal among you could hook up pgdump backups on lambda/S3 for a few cents per month.
-    - Will auto-pause your database when not in use for 7 days.
-  - Who it’s for:
-    - This tier is perfectly functional for a hobby project, or pre-revenue company (up to 50,000 monthly active users). It’s easy to scale up once revenue starts, but it’s also fine to keep at this scale indefinitely.
-- **$30/mo** - Supabase Pro, Cloudfare [Workers Paid](https://www.cloudflare.com/plans/developer-platform/)
-  - Pros:
-    - Database backups.
-    - Never pauses database.
-    - Over 1M serverless functions per day, with linear pricing for additional invocations.
-  - Cons:
-    - none
-  - Who it’s for:
-    - I suggest moving to this once you have paid customers or investors.
 
 ## Performance / Best Practices
 
@@ -130,10 +64,6 @@ The selected tech stack creates lightning fast websites.
 - Svelte and Tailwind compile out unused HTML, CSS and JS at deploy time for smaller pages
 - Linting to find accessibility and syntax issues
 
-The result is a perfect Google PageSpeed Insights score in all categories!
-
-<img width="420" alt="Screenshot 2024-01-18 at 11 31 32 AM" src="https://github.com/CriticalMoments/CMSaasStarter/assets/848343/46b5e960-2aa0-4fb5-acd7-4f84b380e1d0">
-
 # Quick Start
 
 ## Create a Copy of the Template
@@ -143,21 +73,7 @@ To get started, create your own copy of the project for development. There are t
 - "Use this template": use this Github button if you want to build your own project using CMSaasStarter as a starter template and you aren't planning on contributing work back to the public open source project. See [Github Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 - "Fork": use this button if you want contribute some or all of your work back to the public open source project. It will keep the full commit history, and be easier to create PRs back to CMSaasStarter.
 
-## Setup Local Development
-
-On your development machine:
-
-```
-git pull [Your Repo Created Above]
-cd CMSaasStarter ## or your repo name if different
-npm install
-## Create an env file. You'll replace the values in this in later steps.
-cp .env.example .env.local
-## Run the project locally in dev mode, and launch the browser
-npm run dev -- --open
-```
-
-**Note:** some features won't work until you complete the rest of the setup steps below!
+## **Note:** some features won't work until you complete the rest of the setup steps below!
 
 ## Developer Tools
 
@@ -323,30 +239,4 @@ After the steps above, you’ll have a working version like the demo page. Howev
   - Add API endpoints and database tables as needed to deliver your SaaS product.
 - Analytics: optionally add analytics to your project. [guide](/analytics_docs.md)
 
-## Community Extensions
 
-The open source community is extending and improving SaasStarter!
-
-These extensions are reference implementations of commonly needed features. We don't integrate them into the main branch to keep our dependencies minimal and simplify maintenance. However, if you need them you can cherry pick into your fork/repo:
-
-- Internationalization: [branch](https://github.com/CriticalMoments/CMSaasStarter/tree/extension/internationalization), and [instructions](https://github.com/CriticalMoments/CMSaasStarter/pull/49)
-- Fork using Shadcn/ui instead of DaisyUI: [kizivat/saas-kit](https://github.com/kizivat/saas-kit)
-
-### Icons Credits
-
-Homescreen Icons are from [Solar Broken Line Icons](https://www.svgrepo.com/collection/solar-broken-line-icons/) and [Solar Linear Icons](https://www.svgrepo.com/collection/solar-linear-icons) via CC Attribution License.
-
-# Sponsor: Kiln AI
-
-CMSaasStarter is sponsored by [Kiln AI](https://getkiln.ai): the easiest way to build AI products.
-
-- 🚀 Intuitive Desktop Apps: One-click apps for Windows, MacOS, and Linux. Truly intuitive design.
-- 🎛️ Fine Tuning: Zero-code fine-tuning for Llama, GPT-4o, and more. Automatic serverless deployment of models.
-- 📊 Evals: Evaluate the quality of your models/tasks using state of the art evaluators.
-- 🤖 Synthetic Data Generation: Generate training data with our interactive visual tooling.
-- 🧠 Reasoning Models: Train or distill your own custom reasoning models.
-- 🤝 Team Collaboration: Git-based version control for your AI datasets. Intuitive UI makes it easy to collaborate with QA, PM, and subject matter experts on structured data (examples, prompts, ratings, feedback, issues, etc.).
-
-**Demo of Kiln AI:**
-
-https://github.com/user-attachments/assets/0fb3cd48-0f2c-40f5-baf2-b38f11ed85ea
