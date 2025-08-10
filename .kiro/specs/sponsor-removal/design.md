@@ -1,123 +1,179 @@
-# Design Document: Sponsor Removal
+# Design Document: Payment System Removal
 
 ## Overview
 
-This design outlines the approach for completely removing sponsor-related content from the CMSaasStarter project. The primary target is the README.md file which contains a dedicated "Sponsor: Kiln AI" section with promotional content, links, and embedded media. The removal must be clean, maintaining document structure and readability.
+This design outlines the comprehensive approach for removing all payment and monetization functionality from the CMSaasStarter project. This includes Stripe integration, subscription management, pricing plans, billing systems, payment-related database tables, and sponsor content. The goal is to transform the project into a clean, free starter template while preserving all core application functionality.
 
 ## Architecture
 
-The sponsor removal follows a simple content modification architecture:
+The payment system removal involves multiple layers of the application stack:
 
 ```
-README.md (Current)
-├── Extensions section
-├── Icons Credits section  
-├── Sponsor: Kiln AI section ← TARGET FOR REMOVAL
-└── [End of file]
+Application Stack (Current)
+├── Frontend Layer
+│   ├── Pricing Pages (/pricing) ← REMOVE
+│   ├── Subscription UI Components ← REMOVE
+│   ├── Payment Forms ← REMOVE
+│   └── Billing Management ← REMOVE
+├── Backend Layer
+│   ├── Stripe Integration ← REMOVE
+│   ├── Subscription Helpers ← REMOVE
+│   ├── Payment API Routes ← REMOVE
+│   └── Billing Logic ← REMOVE
+├── Database Layer
+│   ├── stripe_customers table ← REMOVE
+│   └── Subscription-related columns ← REMOVE
+├── Configuration Layer
+│   ├── Stripe API Keys ← REMOVE
+│   ├── Pricing Plan Configs ← REMOVE
+│   └── Payment Environment Variables ← REMOVE
+└── Documentation Layer
+    ├── Sponsor Sections ← REMOVE
+    └── Payment Setup Instructions ← REMOVE
 
-README.md (After Removal)
-├── Extensions section
-├── Icons Credits section
-└── [End of file]
+Application Stack (After Removal)
+├── Frontend Layer (Core Features Only)
+├── Backend Layer (Core Features Only)
+├── Database Layer (Core Features Only)
+├── Configuration Layer (Simplified)
+└── Documentation Layer (Clean)
 ```
-
-The removal is straightforward as the sponsor section appears to be the final section of the README, making it a clean deletion without affecting other content flow.
 
 ## Components and Interfaces
 
-### Content Identification Component
-- **Purpose**: Identify exact boundaries of sponsor content
-- **Input**: README.md file content
-- **Output**: Line numbers and content blocks to remove
+### Payment System Identification Component
+
+- **Purpose**: Identify all payment-related code, files, and database structures
+- **Input**: Entire codebase and database schema
+- **Output**: Comprehensive list of payment-related elements to remove
 - **Key Elements**:
-  - Header: `# Sponsor: Kiln AI`
-  - Promotional text block
-  - Feature bullet points (🚀, 🎛️, 📊, 🤖, 🧠, 🤝)
-  - Demo section: `**Demo of Kiln AI:**`
-  - Embedded media URL
+  - Stripe SDK imports and usage
+  - Payment-related routes and API endpoints
+  - Subscription management logic
+  - Pricing plan configurations
+  - Payment UI components
+  - Database tables and columns related to billing
 
-### Content Removal Component  
-- **Purpose**: Remove identified sponsor content while preserving file structure
-- **Input**: File content and removal boundaries
-- **Output**: Clean README.md without sponsor content
+### Database Schema Cleanup Component
+
+- **Purpose**: Remove payment-related database structures
+- **Input**: Current database migration files
+- **Output**: Clean migration files without payment tables
 - **Operations**:
-  - Remove lines 340-352 (approximate, based on current structure)
-  - Ensure no trailing whitespace or empty lines
-  - Maintain proper markdown formatting
+  - Remove stripe_customers table creation
+  - Remove subscription-related columns from user profiles
+  - Clean up any payment-related foreign keys
+  - Update database initialization scripts
 
-### Validation Component
-- **Purpose**: Verify complete removal and document integrity
-- **Checks**:
-  - No "Kiln AI" references remain
-  - No "getkiln.ai" URLs remain  
-  - Markdown structure is valid
-  - No orphaned sections or formatting issues
+### Frontend Cleanup Component
+
+- **Purpose**: Remove all payment-related UI components and pages
+- **Input**: Svelte components and route files
+- **Output**: Clean frontend without payment interfaces
+- **Operations**:
+  - Remove pricing page and components
+  - Remove subscription management UI
+  - Remove payment forms and checkout flows
+  - Clean up navigation links to payment pages
+  - Remove subscription status displays
+
+### Backend Cleanup Component
+
+- **Purpose**: Remove server-side payment processing logic
+- **Input**: Server-side route handlers and utilities
+- **Output**: Clean backend without payment processing
+- **Operations**:
+  - Remove Stripe integration helpers
+  - Remove subscription management endpoints
+  - Remove payment webhook handlers
+  - Clean up authentication middleware that checks subscription status
+
+### Configuration Cleanup Component
+
+- **Purpose**: Remove payment-related environment variables and configuration
+- **Input**: Environment files and configuration
+- **Output**: Simplified configuration without payment settings
+- **Operations**:
+  - Remove Stripe API key references
+  - Remove payment-related environment variables
+  - Update configuration documentation
 
 ## Data Models
 
-### Sponsor Content Block
+### Payment System Inventory
+
 ```typescript
-interface SponsorContent {
-  startLine: number;
-  endLine: number;
-  header: string;           // "# Sponsor: Kiln AI"
-  description: string;      // Main promotional text
-  features: string[];       // Bullet point list
-  demoSection: string;      // Demo header and media
-  mediaUrl?: string;        // Embedded video/image URL
+interface PaymentSystemInventory {
+  stripeFiles: string[] // Files containing Stripe integration
+  pricingFiles: string[] // Files containing pricing logic
+  subscriptionFiles: string[] // Files containing subscription management
+  databaseTables: string[] // Payment-related database tables
+  environmentVars: string[] // Payment-related env variables
+  uiComponents: string[] // Payment-related UI components
+  apiRoutes: string[] // Payment-related API endpoints
 }
 ```
 
 ### Removal Operation
+
 ```typescript
 interface RemovalOperation {
-  targetFile: string;       // "README.md"
-  contentToRemove: SponsorContent;
-  backupRequired: boolean;  // false (git handles versioning)
-  validationChecks: string[]; // List of validation patterns
+  targetFiles: string[] // Files to be deleted or modified
+  databaseChanges: string[] // Database schema changes needed
+  configurationUpdates: string[] // Configuration files to update
+  validationChecks: string[] // Patterns to verify complete removal
+  backupRequired: boolean // Whether to backup before changes
 }
 ```
 
 ## Error Handling
 
-### File Access Errors
-- **Scenario**: README.md is not accessible or locked
-- **Response**: Fail gracefully with clear error message
-- **Recovery**: Verify file permissions and retry
+### File Dependencies
 
-### Content Not Found
-- **Scenario**: Sponsor section has already been removed or moved
-- **Response**: Log warning but continue with validation checks
-- **Recovery**: Perform comprehensive search for any remaining sponsor references
+- **Scenario**: Payment files are imported by core functionality
+- **Response**: Identify and refactor dependencies before removal
+- **Recovery**: Create stub implementations or alternative approaches
 
-### Partial Removal
-- **Scenario**: Only part of sponsor content is removed
-- **Response**: Rollback changes and report specific failure
-- **Recovery**: Re-analyze content boundaries and retry
+### Database Constraints
 
-### Validation Failures
-- **Scenario**: Sponsor content still detected after removal
-- **Response**: Report specific remaining content and fail operation
-- **Recovery**: Manual review of missed content patterns
+- **Scenario**: Payment tables have foreign key constraints
+- **Response**: Remove constraints in proper order during migration
+- **Recovery**: Create rollback migration if needed
+
+### Configuration Dependencies
+
+- **Scenario**: Core features depend on payment configuration
+- **Response**: Update core features to work without payment config
+- **Recovery**: Provide default values or feature flags
+
+### Incomplete Removal
+
+- **Scenario**: Some payment references remain after cleanup
+- **Response**: Comprehensive search and manual cleanup of remaining references
+- **Recovery**: Iterative cleanup process with validation
 
 ## Testing Strategy
 
 ### Unit Testing
-- **Content Detection**: Verify accurate identification of sponsor section boundaries
-- **Removal Logic**: Test clean removal without affecting surrounding content
-- **Validation**: Ensure all sponsor references are detected and flagged
 
-### Integration Testing  
-- **File Operations**: Test complete read-modify-write cycle on README.md
-- **Content Integrity**: Verify markdown structure remains valid after removal
-- **Edge Cases**: Test with various file states (empty, corrupted, etc.)
+- **Payment Code Removal**: Verify all Stripe and payment-related code is removed
+- **Core Functionality**: Ensure core features still work without payment dependencies
+- **Database Operations**: Test that database operations work without payment tables
+
+### Integration Testing
+
+- **Application Startup**: Verify application starts without payment configuration
+- **User Flows**: Test that user registration and core features work without subscription checks
+- **API Endpoints**: Ensure non-payment APIs continue to function correctly
 
 ### Validation Testing
-- **Search Patterns**: Test comprehensive search for sponsor-related terms
-- **False Positives**: Ensure legitimate content isn't flagged for removal
-- **Completeness**: Verify no sponsor content remains in any project files
+
+- **Code Search**: Comprehensive search for payment-related terms and references
+- **Database Schema**: Verify no payment-related tables or columns remain
+- **Configuration**: Ensure no payment-related environment variables are required
 
 ### Manual Testing
-- **Document Review**: Human verification of README readability and flow
-- **Link Validation**: Ensure no broken references after content removal
-- **Formatting Check**: Visual inspection of markdown rendering
+
+- **User Interface**: Visual verification that no payment UI elements remain
+- **Navigation**: Ensure no broken links to removed payment pages
+- **Documentation**: Verify documentation is updated and accurate

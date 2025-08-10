@@ -31,9 +31,8 @@
       and functionality.
     </div>
     <div class="my-2">
-      The <a href="/account/billing" class="link">billing</a> and
-      <a href="/account/settings" class="link">settings</a> pages are functional
-      demos.
+      The <a href="/account/settings" class="link">settings</a> page is a functional
+      demo.
     </div>
   </div>
 </div>
@@ -71,18 +70,18 @@
   </div>
 </div>
 <div class="my-6">
-  <h1 class="text-xl font-bold mb-1">Revenue</h1>
+  <h1 class="text-xl font-bold mb-1">Activity</h1>
   <div class="stats shadow-sm stats-vertical sm:stats-horizontal sm:w-[420px]">
     <div class="stat place-items-center">
-      <div class="stat-title text-success">Revenue</div>
-      <div class="stat-value text-success">$4200</div>
-      <div class="stat-desc">↗︎ $180 (4%)</div>
+      <div class="stat-title text-success">Active Users</div>
+      <div class="stat-value text-success">4200</div>
+      <div class="stat-desc">↗︎ 180 (4%)</div>
     </div>
 
     <div class="stat place-items-center">
-      <div class="stat-title">New Subscribers</div>
+      <div class="stat-title">New Signups</div>
       <div class="stat-value">16</div>
-      <div class="stat-desc">↘︎ 1 (%7)</div>
+      <div class="stat-desc">↘︎ 1 (7%)</div>
     </div>
   </div>
 </div>
