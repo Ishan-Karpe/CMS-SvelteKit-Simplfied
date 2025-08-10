@@ -258,12 +258,6 @@
         <a href="https://github.com/CriticalMoments/CMSaasStarter">
           <button class="btn btn-primary px-6">★ us on Github</button>
         </a>
-        <a
-          href="https://github.com/CriticalMoments/CMSaasStarter/tree/main#saas-starter"
-        >
-          <button class="btn btn-outline btn-primary px-6">Read the Docs</button
-          >
-        </a>
       </div>
     </div>
   </div>
@@ -311,18 +305,6 @@
             <p class="text-sm">
               {feature.description}
             </p>
-            {#if feature.link}
-              <a
-                href={feature.link}
-                class="pb-4"
-                target={feature.newPage ? "_blank" : ""}
-              >
-                <button
-                  class="btn btn-xs btn-outline rounded-full btn-primary min-w-[100px]"
-                  >{feature.linkText ? feature.linkText : "Try It"}</button
-                >
-              </a>
-            {/if}
           </div>
         </div>
       {/each}
